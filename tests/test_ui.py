@@ -112,7 +112,6 @@ def test_create_multiple_contacts(page, auth_token, api_request_context, config,
     assert response.ok, "Failed to get contacts from API"
 
     contacts_from_api = response.json()
-
     for first_name, last_name, email, phone, _ in contacts_data:
         found_contact = any(
             api_contact["firstName"] == first_name and
