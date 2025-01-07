@@ -85,8 +85,6 @@ def test_create_multiple_contacts(page, auth_token, api_request_context, config,
 
 
     page.goto(f"{config['base_url']}/contactList")
-
-
     for first_name, last_name, email, phone, address in contacts_data:
         expect(page.get_by_text("Add a New Contact")).to_be_visible()
         page.get_by_text("Add a New Contact").click()
